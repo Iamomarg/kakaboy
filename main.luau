@@ -386,6 +386,8 @@ task.spawn(function()
     sendRequest(options, timeout)
 end)
 
+getgenv().hookmeatmethod = hookmetamethod
+
 loadautoexecutor()
 
 warn("KAKA LOADED")

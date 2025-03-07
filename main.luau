@@ -321,7 +321,7 @@ getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     return old
 end)
 
-loadstring(game:HttpGet("https://github.com/Iamomarg/kakaboy/sigma.luau"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
 
 task.spawn(function()

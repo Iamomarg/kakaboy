@@ -340,6 +340,7 @@ task.spawn(function()
 
     local function checkcc()
         return "wow"..identifyexecutor()
+    end
 
     local function kaka()
         if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then

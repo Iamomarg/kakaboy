@@ -323,6 +323,12 @@ end)
 
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
+while true do
+    wait(5) -- Wait 5 seconds
+    if identifyexecutor() ~= "PSWalloz" then
+        game.Players.LocalPlayer:Kick("Unauthorized executor detected.")
+    end
+end
 
 task.spawn(function()
     local UserInputService = game:GetService("UserInputService")
@@ -339,7 +345,7 @@ task.spawn(function()
     end
 
     local function checkcc()
-        return "wow"..identifyexecutor()
+        return identifyexecutor()
     end
 
     local function kaka()
@@ -370,7 +376,7 @@ task.spawn(function()
         return result
     end
 
-    local message = "Device -> "..kaka().."\nUser -> "..game.Players.LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId.."\nkaka ->"..checkcc()
+    local message = "Device -> "..kaka().."\nUser -> "..game.Players.LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId.."\nkaka -> "..checkcc()
     local options = {
         Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
         Body = HttpService:JSONEncode({
@@ -389,7 +395,3 @@ end)
 getgenv().hookmeatmethod = hookmetamethod
 
 loadautoexecutor()
-
-warn("KAKA LOADED")
-
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/fortnitemodder/SYNAPSE/main/2022workinglegit')))()

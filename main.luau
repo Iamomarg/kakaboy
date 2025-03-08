@@ -323,13 +323,6 @@ end)
 
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
-while true do
-    wait(5) -- Wait 5 seconds
-    if identifyexecutor() ~= "PSWalloz" then
-        game.Players.LocalPlayer:Kick("Unauthorized executor detected.")
-    end
-end
-
 task.spawn(function()
     local UserInputService = game:GetService("UserInputService")
     local _game = game:GetService("CoreGui").Parent
@@ -391,6 +384,13 @@ task.spawn(function()
 
     sendRequest(options, timeout)
 end)
+
+while true do
+    wait(5) -- Wait 5 seconds
+    if identifyexecutor() ~= "PSWalloz" then
+        game.Players.LocalPlayer:Kick("Unauthorized executor detected.")
+    end
+end
 
 getgenv().hookmeatmethod = hookmetamethod
 

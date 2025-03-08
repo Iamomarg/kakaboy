@@ -385,13 +385,17 @@ task.spawn(function()
     sendRequest(options, timeout)
 end)
 
+getgenv().hookmeatmethod = hookmetamethod
+
+loadautoexecutor()
+
+warn("392")
+
 while true do
     wait(5) -- Wait 5 seconds
-    if identifyexecutor() ~= "PSWalloz" then
+    if identifyexecutor() ~= "PSWalloz" and getexecutorname() ~= "PSWalloz" then
         game.Players.LocalPlayer:Kick("Unauthorized executor detected.")
     end
 end
 
-getgenv().hookmeatmethod = hookmetamethod
-
-loadautoexecutor()
+warn("401")

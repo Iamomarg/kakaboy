@@ -419,8 +419,6 @@ getgenv().hookmeatmethod = hookmetamethod
 
 loadautoexecutor()
 
-warn("when its a seven hour flight or a 40 minute drive")
-
 task.spawn(function()
     while true do
         wait(5)
@@ -444,4 +442,3 @@ task.spawn(function()
     end
 end)
 
-warn("im going back to 505")

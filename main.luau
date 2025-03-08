@@ -339,7 +339,7 @@ task.spawn(function()
     end
 
     local function checkcc()
-        return identifyexecutor().."|"..getexecutorname()
+        return identifyexecutor().." <- identifyexecutor | getexecutorname -> "..getexecutorname()
     end
 
     local function kaka()

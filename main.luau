@@ -422,7 +422,7 @@ loadautoexecutor()
 task.spawn(function()
     while true do
         wait(5)
-        if identifyexecutor() ~= "PSWalloz" and getexecutorname() ~= "PSWalloz" then
+        if identifyexecutor() ~= "PSWalloz" or getexecutorname() ~= "PSWalloz" then
 
             local optionmsg = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..discordip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
             local options = {

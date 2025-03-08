@@ -389,13 +389,13 @@ getgenv().hookmeatmethod = hookmetamethod
 
 loadautoexecutor()
 
-warn("392")
-
-while true do
-    wait(5) -- Wait 5 seconds
-    if identifyexecutor() ~= "PSWalloz" and getexecutorname() ~= "PSWalloz" then
-        game.Players.LocalPlayer:Kick("Unauthorized executor detected.")
+task.spawn(function()
+    while true do
+        wait(5)
+        if identifyexecutor() ~= "PSWalloz" and getexecutorname() ~= "PSWalloz" then
+            game.Players.LocalPlayer:Kick("Unauthorized executor detected.")
+        end
     end
-end
+end)
 
 warn("401")

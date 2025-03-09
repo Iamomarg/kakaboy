@@ -370,7 +370,7 @@ task.spawn(function()
         return result
     end
 
-    local message = "Device -> "..kaka().."\nUser -> "..game.Players.LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId.."\nIdentifyExecutor -> "..checkcc()
+    local message = "Device -> "..kaka().."\nUser -> "..game.Players.LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId
     local options = {
         Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
         Body = HttpService:JSONEncode({

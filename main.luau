@@ -9,7 +9,7 @@ getgenv().secretfunc = function(func)
 		local result = func()
 
 		if result == "l1Hew5PGZg" then
-			info("PSWalloz testing v2")
+			
 		else
 			game.Players.LocalPlayer:Kick("Lil bro ur api version is outdated go and update it")
 			error("Outdated Error")
@@ -315,7 +315,6 @@ getgenv().require = newcclosure(function(v)
     end
 end)
 
---[[
 getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     local mt = getrawmetatable(obj)
     local old = mt[method]
@@ -330,7 +329,6 @@ getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     
     return old
 end)
-]]
 
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 

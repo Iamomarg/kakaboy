@@ -315,6 +315,7 @@ getgenv().require = newcclosure(function(v)
     end
 end)
 
+--[[
 getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     local mt = getrawmetatable(obj)
     local old = mt[method]
@@ -329,9 +330,7 @@ getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
     
     return old
 end)
-
---loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
-
+]]
 
 task.spawn(function()
     local UserInputService = game:GetService("UserInputService")

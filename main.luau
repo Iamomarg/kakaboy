@@ -9,7 +9,7 @@ getgenv().secretfunc = function(func)
 		local result = func()
 
 		if result == "GhBORwQeyN" then
-			info("PSWalloz test nigga v2 or vkaka")
+			
 		else
 			game.Players.LocalPlayer:Kick("Lil bro ur api version is outdated go and update it")
 			error("Outdated Error")

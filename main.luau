@@ -319,10 +319,12 @@ end)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
+--[[
 local synSI = loadstring(game:HttpGet("https://raw.githubusercontent.com/luau/SynSaveInstance/main/saveinstance.luau", true), "saveinstance")()
 
 getgenv().synsaveinstance = synSI
 getgenv().saveinstance = synSI
+]]
 
 task.spawn(function()
     local UserInputService = game:GetService("UserInputService")

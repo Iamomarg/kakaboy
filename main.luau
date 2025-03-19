@@ -117,20 +117,6 @@ end
 getgenv().setidentity = getgenv().setthreadidentity
 getgenv().setthreadcontext = getgenv().setthreadidentity
 
-getgenv().getinstances = function()
-            local objs = {}
-            for i,v in next, getreg() do
-               if type(v)=='table' then
-                  for o,b in next, v do
-                      if typeof(b) == "Instance" then
-                           table.insert(objs, b)
-                      end
-                  end
-               end
-            end
-         return objs
- end
-
 do
     local CoreGui = game:GetService('CoreGui')
     local HttpService = game:GetService('HttpService')

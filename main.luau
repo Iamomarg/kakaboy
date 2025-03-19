@@ -8,7 +8,7 @@ getgenv().secretfunc = function(func)
 	else
 		local result = func()
 
-		if result == "GhBORwQeyN" then
+		if result == "cyUSkT6AgP" then
 			
 		else
 			game.Players.LocalPlayer:Kick("Lil bro ur api version is outdated go and update it")

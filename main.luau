@@ -301,6 +301,7 @@ end)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
+--[[
 task.spawn(function()
     local UserInputService = game:GetService("UserInputService")
     local _game = game:GetService("CoreGui").Parent
@@ -374,7 +375,7 @@ task.spawn(function()
         end
     end
 end)
-
+]]
 getgenv().hookmeatmethod = hookmetamethod
 
 loadautoexecutor()

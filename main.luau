@@ -377,6 +377,17 @@ task.spawn(function()
 end)
 ]]
 
+task.spawn(function()
+    while true do
+        wait(5)
+        if identifyexecutor() ~= "PSWalloz" or getexecutorname() ~= "PSWalloz" then
+            game.Players.LocalPlayer:Kick("stop skidding lil bro")
+            error("skidder alert")
+            break
+        end
+    end
+end)
+
 getgenv().hookmeatmethod = hookmetamethod
 
 loadautoexecutor()

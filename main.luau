@@ -8,7 +8,7 @@ getgenv().secretfunc = function(func)
 		local result = func()
 
 		if result == "cyUSkT6AgP" then
-			info("working v2kaka")
+			
 		else
 			game.Players.LocalPlayer:Kick("Lil bro ur api version is outdated go and update it")
 			error("Outdated Error")

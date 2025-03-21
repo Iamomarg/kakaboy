@@ -1,4 +1,4 @@
-if not game:IsLoaded() then game.Loaded:Wait() end
+repeat wait() until game:IsLoaded()
 
 
 getgenv().secretfunc = function(func)

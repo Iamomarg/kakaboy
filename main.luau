@@ -1,6 +1,7 @@
+print("hi")
+
 repeat wait() until game:IsLoaded()
 
-print("hi")
 
 getgenv().secretfunc = function(func)
 	if func == nil then

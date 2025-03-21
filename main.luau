@@ -1,4 +1,4 @@
---if not game:IsLoaded() then game.Loaded:Wait() end
+if not game:IsLoaded() then game.Loaded:Wait() end
 
 getgenv().secretfunc = function(func)
 	if func == nil then

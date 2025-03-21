@@ -1,5 +1,6 @@
 info("testv2")
 if not game:IsLoaded() then game.Loaded:Wait() end
+info("fuck game")
 
 getgenv().secretfunc = function(func)
 	if func == nil then

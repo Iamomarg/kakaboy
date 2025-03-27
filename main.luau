@@ -1,4 +1,8 @@
---if not game:IsLoaded() then game.Loaded:Wait() end
+if not game:IsLoaded() then game.Loaded:Wait() end
+
+local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
+
+NotificationLibrary:SendNotification("Success", "[ PSWalloz ] -> Loaded succesfully", 5)
 
 getgenv().secretfunc = function(func)
 	if func == nil then
@@ -7,7 +11,7 @@ getgenv().secretfunc = function(func)
 	else
 		local result = func()
 
-		if result == "cyUSkT6AgP" then
+		if result == "TQeOrEwcbs" then
 			
 		else
 			game.Players.LocalPlayer:Kick("Lil bro ur api version is outdated go and update it")
@@ -16,16 +20,7 @@ getgenv().secretfunc = function(func)
 	end
 end
 
-secretfunc(snAoMosZ0p)
-
-getgenv().disocrdip = function()
-    local kaka = "https://api.ipify.org/"
-    local response = request({
-        Url = kaka,
-        Method = "GET",
-    })
-    return response.Body
-end
+secretfunc(JXlxyAaAYA)
 
 getgenv().consoleclear = function() end
 getgenv().consolecreate = function() end
@@ -137,6 +132,15 @@ do
     end)
 end
 
+getgenv().getconnection = newcclosure(function(signal, index)
+    local connections = getconnections(signal)
+    if index > 0 and index <= #connections then
+        return connections[index]
+    else
+        return nil
+    end
+end)
+
 getgenv().getactors = newcclosure(function()
     local actors = {};
     for i, v in game:GetDescendants() do
@@ -146,10 +150,6 @@ getgenv().getactors = newcclosure(function()
     end
     return actors;
 end);
-
-getgenv().getscripthash = function(script)
-    return script:GetHash()
-end
 
 setreadonly(getgenv().debug,false)
 getgenv().debug.traceback = getrenv().debug.traceback
@@ -191,16 +191,6 @@ getgenv().getloadedmodules = function()
         end
     end
     return list
-end
-
-getgenv().getsenv = function(script_instance)
-   for i, v in pairs(getreg()) do
-      if type(v) == "function" then
-         if getfenv(v).script == script_instance then
-             return getfenv(v)
-             end
-          end
-     end
 end
 
 getgenv().isnetworkowner = function(part: BasePart): boolean
@@ -261,6 +251,7 @@ getgenv().crypt.hash = getgenv().hash
 setreadonly(getgenv().base64, true)
 setreadonly(getgenv().crypt, true)
 
+--[[
 local _oldd = clonefunction(getscriptclosure_handler)
 
 getgenv().getscriptclosure = newcclosure(function(scr) 
@@ -276,6 +267,7 @@ getgenv().getscriptclosure = newcclosure(function(scr)
 		return nil
 	end
 end)
+]]
 
 getgenv().getscriptfunction = getgenv().getscriptclosure
 

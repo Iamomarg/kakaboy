@@ -152,12 +152,12 @@ getgenv().getactors = newcclosure(function()
 end);
 
 setreadonly(getgenv().debug,false)
-getgenv().debug.traceback = getrenv().debug.traceback
-getgenv().debug.profilebegin = getrenv().debug.profilebegin
-getgenv().debug.profileend = getrenv().debug.profileend
+getgenv().debug.traceback = initgetrenv().debug.traceback
+getgenv().debug.profilebegin = initgetrenv().debug.profilebegin
+getgenv().debug.profileend = initgetrenv().debug.profileend
 getgenv().debug.getmetatable = getgenv().getrawmetatable
 getgenv().debug.setmetatable = getgenv().setrawmetatable
-getgenv().debug.info = getrenv().debug.info
+getgenv().debug.info = initgetrenv().debug.info
 
 getgenv().getrunningscripts = function()
     local t = table.create(0)
@@ -271,7 +271,7 @@ end)
 
 getgenv().getscriptfunction = getgenv().getscriptclosure
 
-local oldreq = clonefunction(getrenv().require)
+local oldreq = clonefunction(initgetrenv().require)
 getgenv().require = newcclosure(function(v)
     local oldlevel = getthreadcontext()
     local succ, res = pcall(oldreq, v)

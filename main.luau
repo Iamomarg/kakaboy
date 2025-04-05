@@ -251,7 +251,6 @@ getgenv().crypt.hash = getgenv().hash
 setreadonly(getgenv().base64, true)
 setreadonly(getgenv().crypt, true)
 
---[[
 local _oldd = clonefunction(getscriptclosure_handler)
 
 getgenv().getscriptclosure = newcclosure(function(scr) 
@@ -267,7 +266,6 @@ getgenv().getscriptclosure = newcclosure(function(scr)
 		return nil
 	end
 end)
-]]
 
 getgenv().getscriptfunction = getgenv().getscriptclosure
 

@@ -291,7 +291,7 @@ getgenv().require = newcclosure(function(v)
     end
 end)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
 task.spawn(function()
     while true do

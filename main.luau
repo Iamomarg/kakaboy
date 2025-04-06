@@ -46,14 +46,6 @@ testdebug.getregistry = getgenv().getregistry
 debug = testdebug
 getgenv().debug = testdebug
 
-setreadonly(getgenv().debug,false)
-getgenv().debug.traceback = initgetrenv().debug.traceback
-getgenv().debug.profilebegin = initgetrenv().debug.profilebegin
-getgenv().debug.profileend = initgetrenv().debug.profileend
-getgenv().debug.getmetatable = getgenv().getrawmetatable
-getgenv().debug.setmetatable = getgenv().setrawmetatable
-getgenv().debug.info = initgetrenv().debug.info
-
 getgenv().setthreadidentity = function(identity: number): ()
     _setidentity(identity)
     task.wait()

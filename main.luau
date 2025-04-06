@@ -218,7 +218,7 @@ end)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
-NotificationLibrary:SendNotification("Success", "[ PSWalloz ] -> Loaded succesfully", 5)
+NotificationLibrary:SendNotification("Success", "[PSWalloz] -> Loaded succesfully", 5)
 
 task.spawn(function()
     while true do
@@ -230,7 +230,5 @@ task.spawn(function()
         end
     end
 end)
-
-getgenv().hookmeatmethod = hookmetamethod
 
 loadautoexecutor()

@@ -2,8 +2,6 @@
 
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 
-NotificationLibrary:SendNotification("Success", "[ PSWalloz ] -> Loaded succesfully", 5)
-
 getgenv().secretfunc = function(func)
 	if func == nil then
 		game.Players.LocalPlayer:Kick("not available right now!")
@@ -292,6 +290,8 @@ getgenv().require = newcclosure(function(v)
 end)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
+
+NotificationLibrary:SendNotification("Success", "[ PSWalloz ] -> Loaded succesfully", 5)
 
 task.spawn(function()
     while true do

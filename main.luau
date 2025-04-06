@@ -28,6 +28,23 @@ getgenv().consoleprint = function() end
 getgenv().consolesettitle = function() end
 getgenv().rconsolename = function() end
 
+local testdebug = table.clone(debug)
+
+testdebug.getconstant = getgenv().getconstant
+testdebug.getconstants = getgenv().getconstants
+testdebug.getinfo = getgenv().getinfo
+testdebug.setconstant = getgenv().setconstant
+testdebug.getproto = getgenv().getproto
+testdebug.getprotos = getgenv().getprotos
+testdebug.getstack = getgenv().getstack
+testdebug.setstack = getgenv().setstack
+testdebug.getupvalue = getgenv().getupvalue
+testdebug.getupvalues = getgenv().getupvalues
+testdebug.setupvalue = getgenv().setupvalue
+testdebug.getregistry = getgenv().getregistry
+
+debug = testdebug
+
 getgenv().setthreadidentity = function(identity: number): ()
     _setidentity(identity)
     task.wait()

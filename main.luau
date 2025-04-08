@@ -238,6 +238,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs
 
 NotificationLibrary:SendNotification("Success", "[PSWalloz] -> Loaded succesfully", 5)
 
+--[[
 task.spawn(function()
     while true do
         wait(5)
@@ -248,5 +249,6 @@ task.spawn(function()
         end
     end
 end)
+]]
 
 loadautoexecutor()

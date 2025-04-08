@@ -236,13 +236,13 @@ end)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
-NotificationLibrary:SendNotification("Success", "[PSWalloz] -> Loaded succesfully", 5)
+NotificationLibrary:SendNotification("Success", "[b2kc is a nigger] -> Loaded succesfully", 5)
 
 task.spawn(function()
     while true do
         wait(5)
         if identifyexecutor() ~= "Ventures" or getexecutorname() ~= "Ventures" then
-            game.Players.LocalPlayer:Kick("stop skidding lil bro")
+            game.Players.LocalPlayer:Kick("stop trying to edit identifyexecutor lil bro 😭 [b2kc is so cool and a niggardly sigma]")
             error("skidder alert")
             break
         end

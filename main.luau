@@ -236,8 +236,9 @@ end)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
-NotificationLibrary:SendNotification("Success", "[b2kc is a nigger] -> Loaded succesfully", 5)
+NotificationLibrary:SendNotification("Success", "[niggeria nigger] -> Loaded succesfully", 5)
 
+--[[
 task.spawn(function()
     while true do
         wait(5)
@@ -248,5 +249,6 @@ task.spawn(function()
         end
     end
 end)
+]]
 
 loadautoexecutor()

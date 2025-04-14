@@ -35,10 +35,7 @@ end
 gameProxy.__metatable = getmetatable(_game)
 
 
-
-info("Loaded meta hook in lua! V5")
-
-
+info("kaka v5!")
 
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 

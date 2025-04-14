@@ -1,1 +1,135 @@
-TCmkGiJ9RF
+--// Services 
+local RunService: RunService = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UserInputService = game:GetService("UserInputService")
+local IsStudio = RunService:IsStudio()
+
+--// Fetch library
+local ImGui
+if IsStudio then
+    ImGui = require(ReplicatedStorage.ImGui)
+else
+    local SourceURL = 'https://github.com/depthso/Roblox-ImGUI/raw/main/ImGui.lua'
+    ImGui = loadstring(httpget(SourceURL))()
+end
+
+--// Window 
+local Window = ImGui:CreateWindow({
+    Title = "ImGui",
+    Size = UDim2.new(0, 350, 0, 370),
+    Position = UDim2.new(0.5, 0, 0, 70)
+})
+Window:Center()
+
+--// Console Tab
+local ConsoleTab = Window:CreateTab({
+    Name = "Console"
+})
+Window:ShowTab(ConsoleTab)
+
+local Row2 = ConsoleTab:Row()
+ConsoleTab:Separator({
+    Text = "Console Example:"
+})
+
+local Console = ConsoleTab:Console({
+    Text = "Console example",
+    ReadOnly = true,
+    LineNumbers = false,
+    Border = false,
+    Fill = true,
+    Enabled = true,
+    AutoScroll = true,
+    RichText = true,
+    MaxLines = 50
+})
+
+Row2:Button({
+    Text = "Clear",
+    Callback = Console.Clear
+})
+Row2:Button({
+    Text = "Copy"
+})
+Row2:Button({
+    Text = "Pause",
+    Callback = function(self)
+        local Paused = shared.Pause
+        Paused = not (Paused or false)
+        shared.Pause = Paused
+        
+        self.Text = Paused and "Paused" or "Pause"
+        Console.Enabled = not Paused
+    end,
+})
+Row2:Fill()
+
+coroutine.wrap(function()
+    while (task.wait()) do 
+        if not getgenv().printconsole then 
+            getgenv().printconsole = function(Str)
+                Console:AppendText(Str);
+            end
+        end
+        if not getgenv().warnconsole then
+            getgenv().warnconsole = function(Str)
+                Console:AppendText(`<font color="rgb(255, 165, 0)">`..Str..`</font>`)
+            end
+        end
+    end
+end)()
+
+--// Execution Tab
+local ExecutionTab = Window:CreateTab({
+    Name = "Execution"
+})
+Window:ShowTab(ExecutionTab)
+
+local InputBox = ExecutionTab:InputText({
+    Label = "",
+    PlaceHolder = "Enter script here",
+    Value = "",
+    Size = UDim2.new(1, 0, 0.9, 0),
+})
+
+local RowExec = ExecutionTab:Row()
+
+RowExec:Button({
+    Text = "Execute",
+    Callback = function()
+        if InputBox:GetValue() then
+            local script = InputBox:GetValue()
+            local success, err = pcall(loadstring(script))
+            if not success then
+                info("Execution Error: " .. err)
+            else
+                
+            end
+        else
+            info("No script provided!")
+        end
+    end,
+})
+
+RowExec:Button({
+    Text = "Clear",
+    Callback = function()
+        InputBox:SetValue("")
+    end,
+})
+
+--// Toggle Window visibility with the Insert key
+local windowVisible = true
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.Insert then
+        windowVisible = not windowVisible
+        Window:SetVisible(windowVisible)
+    end
+end)
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed and input.KeyCode == Enum.KeyCode.C then
+        Window:Destroy()
+    end
+end)

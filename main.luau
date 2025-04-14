@@ -1,5 +1,7 @@
 --if not game:IsLoaded() then game.Loaded:Wait() end
 
+info("loading...")
+
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 
 getgenv().secretfunc = function(func)

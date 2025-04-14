@@ -13,7 +13,7 @@ gameProxy.__index = function(self, index)
     end
     if index == "GetObjects" or index == "GetObjectsAsync" then
         return function(self, ...)
-            return GetObjects(...)
+            return getobjects(...)
         end
     end
     if type(_game[index]) == "function" then

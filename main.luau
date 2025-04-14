@@ -36,7 +36,7 @@ gameProxy.__metatable = getmetatable(_game)
 
 
 
-info("Loaded meta hook in lua! V3")
+info("Loaded meta hook in lua! V4")
 
 
 

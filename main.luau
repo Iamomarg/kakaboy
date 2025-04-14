@@ -1,5 +1,36 @@
 --if not game:IsLoaded() then game.Loaded:Wait() end
 
+
+_game = game
+game = newproxy(true)
+local gameProxy = getmetatable(game)
+
+gameProxy.__index = function(self, index)
+    if index == "HttpGet" or index == "HttpGetAsync" then
+        return function(self, ...)
+            return httpget(...)
+        end
+    end
+    if type(_game[index]) == "function" then
+        return function(self, ...)
+            return _game[index](_game, ...)
+        end
+    end
+    return _game[index]
+end
+
+gameProxy.__newindex = function(self, index, value)
+    _game[index] = value
+end
+
+gameProxy.__tostring = function(self)
+    return _game.Name
+end
+
+gameProxy.__metatable = getmetatable(_game)
+
+
+
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 
 getgenv().secretfunc = function(func)

@@ -36,7 +36,9 @@ gameProxy.__metatable = getmetatable(_game)
 
 
 
-info("Loaded meta hook in lua!")
+info("Loaded meta hook in lua! V2")
+
+
 
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 

@@ -1,43 +1,5 @@
 --if not game:IsLoaded() then game.Loaded:Wait() end
 
-
-_game = game
-game = newproxy(true)
-local gameProxy = getmetatable(game)
-
-gameProxy.__index = function(self, index)
-    if index == "HttpGet" or index == "HttpGetAsync" then
-        return function(self, ...)
-            return httpget(...)
-        end
-    end
-    if index == "GetObjects" or index == "GetObjectsAsync" then
-        return function(self, ...)
-            return getobjects(...)
-        end
-    end
-    if type(_game[index]) == "function" then
-        return function(self, ...)
-            return _game[index](_game, ...)
-        end
-    end
-    return _game[index]
-end
-
-gameProxy.__newindex = function(self, index, value)
-    _game[index] = value
-end
-
-gameProxy.__tostring = function(self)
-    return _game.Name
-end
-
-gameProxy.__metatable = getmetatable(_game)
-info("kaka v5! loaded the meta hook!!")
-
-y = game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/wow")
-print("The game:HttpGet function returned: " .. y)
-
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 
 getgenv().secretfunc = function(func)

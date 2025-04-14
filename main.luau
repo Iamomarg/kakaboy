@@ -11,6 +11,11 @@ gameProxy.__index = function(self, index)
             return httpget(...)
         end
     end
+    if index == "GetObjects" or index == "GetObjectsAsync" then
+        return function(self, ...)
+            return GetObjects(...)
+        end
+    end
     if type(_game[index]) == "function" then
         return function(self, ...)
             return _game[index](_game, ...)
@@ -28,6 +33,8 @@ gameProxy.__tostring = function(self)
 end
 
 gameProxy.__metatable = getmetatable(_game)
+
+
 
 info("Loaded meta hook in lua!")
 

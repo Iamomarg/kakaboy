@@ -292,5 +292,3 @@ end)
 ]]
 
 --loadautoexecutor()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/ui"))()

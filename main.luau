@@ -33,9 +33,10 @@ gameProxy.__tostring = function(self)
 end
 
 gameProxy.__metatable = getmetatable(_game)
+info("kaka v5! loaded the meta hook!!")
 
-
-info("kaka v5!")
+y = game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/wow")
+print("The game:HttpGet function returned: " .. y)
 
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 

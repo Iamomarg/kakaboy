@@ -1,6 +1,5 @@
 --if not game:IsLoaded() then game.Loaded:Wait() end
 
-info("loading...")
 
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMinisterq/Notification-Library/Main/Library.lua"))()
 
@@ -97,12 +96,12 @@ getgenv().getactors = newcclosure(function()
 end);
 
 setreadonly(getgenv().debug,false)
-getgenv().debug.traceback = initgetrenv().debug.traceback
-getgenv().debug.profilebegin = initgetrenv().debug.profilebegin
-getgenv().debug.profileend = initgetrenv().debug.profileend
+--getgenv().debug.traceback = initgetrenv().debug.traceback
+--getgenv().debug.profilebegin = initgetrenv().debug.profilebegin
+--getgenv().debug.profileend = initgetrenv().debug.profileend
 getgenv().debug.getmetatable = getgenv().getrawmetatable
 getgenv().debug.setmetatable = getgenv().setrawmetatable
-getgenv().debug.info = initgetrenv().debug.info
+--getgenv().debug.info = initgetrenv().debug.info
 
 getgenv().getrunningscripts = function()
     local t = table.create(0)
@@ -216,7 +215,7 @@ end)
 
 getgenv().getscriptfunction = getgenv().getscriptclosure
 
-local oldreq = clonefunction(initgetrenv().require)
+--[[local oldreq = clonefunction(initgetrenv().require)
 getgenv().require = newcclosure(function(v)
     local oldlevel = getthreadcontext()
     local succ, res = pcall(oldreq, v)
@@ -235,6 +234,7 @@ getgenv().require = newcclosure(function(v)
         return res
     end
 end)
+]]
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamomarg/kakaboy/refs/heads/main/sigma.luau"))()
 
